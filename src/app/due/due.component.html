@@ -1,0 +1,87 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+    &nbsp;<a style="color: white;"  (click)="home()">Home</a>
+    <div class="spacer"></div>
+    <span>NHS Internal Training Management System</span>
+    <div class="spacer"></div>
+    <a style="color: white;" (click)="sign()">LogOut</a>&nbsp;
+    
+  </div>
+  
+  <div class="content" role="main">
+  
+    <!-- Highlight Card -->
+    <div class="card  card-small">
+  
+     
+  
+      <span>{{sessionValue}}</span>
+  
+  
+  
+    </div>
+<div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col col-md-2">
+    
+      </div>
+      <div class="col-12 col-md-8">
+          
+        <div class="card-container">
+            <a class="card" style="background-color: rgb(98, 98, 99);color: white;"  (click)="due()" rel="noopener" >
+             
+              <span>Due Courses</span>
+        
+              <svg class="material-icons"  width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    </a>
+        
+            <a class="card"  (click)="add()"  rel="noopener" >
+             
+              <span>Add </span>
+        
+              <svg class="material-icons"  width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </a>
+        
+            <a class="card"  (click)="update()"  rel="noopener" >
+             
+              <span>Update Data</span>
+        
+              <svg class="material-icons"  width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </a>
+        
+          </div>
+      </div>
+      <div class="col col-md-2">
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        
+      </div>
+      <div class="col-12 col-md-10">
+        <div class="example-1 scrollbar-cyan bordered-cyan thin">
+        <table mdbTable hover="true">
+            <thead>
+              <tr>
+                <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr mdbTableCol *ngFor="let el of in">
+                <th scope="row">{{el.EmployeeNumber}}</th>
+                <td>{{el.Name}}</td>
+                <td>{{el.Surname}}</td>
+                <td>{{el.Department}}</td>
+                <td>{{el.Course}}</td>
+                <td>{{calculateDiff(el.DateOfExam,el.DueForExam, el.PassMark)}}</td>
+                <td><button class="btn btn-primary" (click)="notify(el.Email)">Email</button></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+      </div>
+      <div class=" col-md-2">
+     
+      </div>
+    </div>
+  </div>

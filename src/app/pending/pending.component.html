@@ -1,0 +1,50 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+    <div class="spacer"></div>
+    <span>NHS Internal Training Management System</span>
+    <div class="spacer"></div>
+    
+  </div>
+  
+  <div class="content" role="main">
+  
+    <!-- Highlight Card -->
+    <div class="card  card-small">
+  
+     
+  
+      <span>SEARCH</span>
+  
+  
+  
+    </div>
+    <br>
+<div class="container">
+    <div class="row">
+      <div class="col">
+      
+      </div>
+      <div class="col-6">
+        <form class="text-center border border-light p-5" #userLogin="ngForm" (ngSubmit)="onClickSubmit()">
+
+            <p class="h4 mb-4">Enter Your Employee Number</p>
+          
+            <!-- Email -->
+            <input type="number" id="defaultLoginFormEN" name="EmployeeNumber" [(ngModel)]="declared.EmployeeNumber" class="form-control mb-4" placeholder="Employee number">
+          
+
+          
+            <!-- Sign in button -->
+            <button mdbBtn color="info" block="true" class="my-4"  type="submit">Search</button>
+          
+           
+          
+          </form>
+          <!-- Default form login -->
+      </div>
+      <div class="col">
+     
+      </div>
+    </div>
+   
+  </div>
